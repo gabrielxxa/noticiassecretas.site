@@ -1,391 +1,435 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-	<meta charset="UTF-8">
-		<title>dpps5 &#8211; canalaprenda</title>
-<meta name='robots' content='max-image-preview:large' />
-<link rel="alternate" type="application/rss+xml" title="Feed para canalaprenda &raquo;" href="https://canalaprenda.fun/feed/" />
-<link rel="alternate" type="application/rss+xml" title="Feed de comentários para canalaprenda &raquo;" href="https://canalaprenda.fun/comments/feed/" />
-		<!-- This site uses the Google Analytics by MonsterInsights plugin v8.11.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
-							<script
-				src="//www.googletagmanager.com/gtag/js?id=UA-227545445-1"  data-cfasync="false" data-wpfc-render="false" async></script>
-			<script data-cfasync="false" data-wpfc-render="false">
-				var mi_version = '8.11.0';
-				var mi_track_user = true;
-				var mi_no_track_reason = '';
-				
-								var disableStrs = [
-															'ga-disable-UA-227545445-1',
-									];
-
-				/* Function to detect opted out users */
-				function __gtagTrackerIsOptedOut() {
-					for (var index = 0; index < disableStrs.length; index++) {
-						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
-							return true;
-						}
-					}
-
-					return false;
-				}
-
-				/* Disable tracking if the opt-out cookie exists. */
-				if (__gtagTrackerIsOptedOut()) {
-					for (var index = 0; index < disableStrs.length; index++) {
-						window[disableStrs[index]] = true;
-					}
-				}
-
-				/* Opt-out function */
-				function __gtagTrackerOptout() {
-					for (var index = 0; index < disableStrs.length; index++) {
-						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
-						window[disableStrs[index]] = true;
-					}
-				}
-
-				if ('undefined' === typeof gaOptout) {
-					function gaOptout() {
-						__gtagTrackerOptout();
-					}
-				}
-								window.dataLayer = window.dataLayer || [];
-
-				window.MonsterInsightsDualTracker = {
-					helpers: {},
-					trackers: {},
-				};
-				if (mi_track_user) {
-					function __gtagDataLayer() {
-						dataLayer.push(arguments);
-					}
-
-					function __gtagTracker(type, name, parameters) {
-						if (!parameters) {
-							parameters = {};
-						}
-
-						if (parameters.send_to) {
-							__gtagDataLayer.apply(null, arguments);
-							return;
-						}
-
-						if (type === 'event') {
-							
-														parameters.send_to = monsterinsights_frontend.ua;
-							__gtagDataLayer(type, name, parameters);
-													} else {
-							__gtagDataLayer.apply(null, arguments);
-						}
-					}
-
-					__gtagTracker('js', new Date());
-					__gtagTracker('set', {
-						'developer_id.dZGIzZG': true,
-											});
-															__gtagTracker('config', 'UA-227545445-1', {"forceSSL":"true","link_attribution":"true"} );
-										window.gtag = __gtagTracker;										(function () {
-						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
-						/* ga and __gaTracker compatibility shim. */
-						var noopfn = function () {
-							return null;
-						};
-						var newtracker = function () {
-							return new Tracker();
-						};
-						var Tracker = function () {
-							return null;
-						};
-						var p = Tracker.prototype;
-						p.get = noopfn;
-						p.set = noopfn;
-						p.send = function () {
-							var args = Array.prototype.slice.call(arguments);
-							args.unshift('send');
-							__gaTracker.apply(null, args);
-						};
-						var __gaTracker = function () {
-							var len = arguments.length;
-							if (len === 0) {
-								return;
-							}
-							var f = arguments[len - 1];
-							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
-								if ('send' === arguments[0]) {
-									var hitConverted, hitObject = false, action;
-									if ('event' === arguments[1]) {
-										if ('undefined' !== typeof arguments[3]) {
-											hitObject = {
-												'eventAction': arguments[3],
-												'eventCategory': arguments[2],
-												'eventLabel': arguments[4],
-												'value': arguments[5] ? arguments[5] : 1,
-											}
-										}
-									}
-									if ('pageview' === arguments[1]) {
-										if ('undefined' !== typeof arguments[2]) {
-											hitObject = {
-												'eventAction': 'page_view',
-												'page_path': arguments[2],
-											}
-										}
-									}
-									if (typeof arguments[2] === 'object') {
-										hitObject = arguments[2];
-									}
-									if (typeof arguments[5] === 'object') {
-										Object.assign(hitObject, arguments[5]);
-									}
-									if ('undefined' !== typeof arguments[1].hitType) {
-										hitObject = arguments[1];
-										if ('pageview' === hitObject.hitType) {
-											hitObject.eventAction = 'page_view';
-										}
-									}
-									if (hitObject) {
-										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
-										hitConverted = mapArgs(hitObject);
-										__gtagTracker('event', action, hitConverted);
-									}
-								}
-								return;
-							}
-
-							function mapArgs(args) {
-								var arg, hit = {};
-								var gaMap = {
-									'eventCategory': 'event_category',
-									'eventAction': 'event_action',
-									'eventLabel': 'event_label',
-									'eventValue': 'event_value',
-									'nonInteraction': 'non_interaction',
-									'timingCategory': 'event_category',
-									'timingVar': 'name',
-									'timingValue': 'value',
-									'timingLabel': 'event_label',
-									'page': 'page_path',
-									'location': 'page_location',
-									'title': 'page_title',
-								};
-								for (arg in args) {
-																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
-										hit[gaMap[arg]] = args[arg];
-									} else {
-										hit[arg] = args[arg];
-									}
-								}
-								return hit;
-							}
-
-							try {
-								f.hitCallback();
-							} catch (ex) {
-							}
-						};
-						__gaTracker.create = newtracker;
-						__gaTracker.getByName = newtracker;
-						__gaTracker.getAll = function () {
-							return [];
-						};
-						__gaTracker.remove = noopfn;
-						__gaTracker.loaded = true;
-						window['__gaTracker'] = __gaTracker;
-					})();
-									} else {
-										console.log("");
-					(function () {
-						function __gtagTracker() {
-							return null;
-						}
-
-						window['__gtagTracker'] = __gtagTracker;
-						window['gtag'] = __gtagTracker;
-					})();
-									}
-			</script>
-				<!-- / Google Analytics by MonsterInsights -->
-		<script>
-window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/canalaprenda.fun\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.1"}};
-/*! This file is auto-generated */
-!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
-</script>
-<style>
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 0.07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
-}
-</style>
-	<link rel='stylesheet' id='wp-block-library-css' href='https://canalaprenda.fun/wp-includes/css/dist/block-library/style.min.css?ver=6.1.1' media='all' />
-<link rel='stylesheet' id='classic-theme-styles-css' href='https://canalaprenda.fun/wp-includes/css/classic-themes.min.css?ver=1' media='all' />
-<style id='global-styles-inline-css'>
-body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+<html lang="pt-BR" class=""><head>
+<meta charset="UTF-8">
+<title>zap-da-loto-char-v2 (c2)</title>
+<meta name="robots" content="max-image-preview:large">
+<link rel="alternate" type="application/rss+xml" title="Feed para  »" href="https://surpreendente.fun/feed/">
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para  »" href="https://surpreendente.fun/comments/feed/">
+<!-- <link rel='stylesheet' id='wp-block-library-css' href='https://surpreendente.fun/wp-includes/css/dist/block-library/style.min.css?ver=6.1.1' media='all' /> -->
+<!-- <link rel='stylesheet' id='classic-theme-styles-css' href='https://surpreendente.fun/wp-includes/css/classic-themes.min.css?ver=1' media='all' /> -->
+<link rel="stylesheet" type="text/css" href="//surpreendente.fun/wp-content/cache/wpfc-minified/l211trlf/4phd2.css" media="all">
+<style id="global-styles-inline-css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--accent: #e22658;--wp--preset--color--primary: #000000;--wp--preset--color--secondary: #6d6d6d;--wp--preset--color--subtle-background: #dbdbdb;--wp--preset--color--background: #ffffff;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 18px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 26.25px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 21px;--wp--preset--font-size--larger: 32px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
 .wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
 :where(.wp-block-columns.is-layout-flex){gap: 2em;}
 .wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
 </style>
-<link rel='stylesheet' id='hello-elementor-css' href='https://canalaprenda.fun/wp-content/themes/hello-elementor/style.min.css?ver=2.6.1' media='all' />
-<link rel='stylesheet' id='hello-elementor-theme-style-css' href='https://canalaprenda.fun/wp-content/themes/hello-elementor/theme.min.css?ver=2.6.1' media='all' />
-<link rel='stylesheet' id='elementor-frontend-css' href='https://canalaprenda.fun/wp-content/plugins/elementor/assets/css/frontend-lite.min.css?ver=3.9.0' media='all' />
-<link rel='stylesheet' id='elementor-post-5-css' href='https://canalaprenda.fun/wp-content/uploads/elementor/css/post-5.css?ver=1670674259' media='all' />
-<link rel='stylesheet' id='elementor-icons-css' href='https://canalaprenda.fun/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.16.0' media='all' />
-<link rel='stylesheet' id='elementor-pro-css' href='https://canalaprenda.fun/wp-content/plugins/elementor-pro/assets/css/frontend-lite.min.css?ver=3.7.7' media='all' />
-<link rel='stylesheet' id='elementor-global-css' href='https://canalaprenda.fun/wp-content/uploads/elementor/css/global.css?ver=1670674329' media='all' />
-<link rel='stylesheet' id='elementor-post-9-css' href='https://canalaprenda.fun/wp-content/uploads/elementor/css/post-9.css?ver=1674074580' media='all' />
-<link rel='stylesheet' id='google-fonts-1-css' href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap&#038;ver=6.1.1' media='all' />
-<link rel='stylesheet' id='elementor-icons-shared-0-css' href='https://canalaprenda.fun/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.15.3' media='all' />
-<link rel='stylesheet' id='elementor-icons-fa-regular-css' href='https://canalaprenda.fun/wp-content/plugins/elementor/assets/lib/font-awesome/css/regular.min.css?ver=5.15.3' media='all' />
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><script src='https://canalaprenda.fun/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=8.11.0' id='monsterinsights-frontend-script-js'></script>
-<script data-cfasync="false" data-wpfc-render="false" id='monsterinsights-frontend-script-js-extra'>var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/canalaprenda.fun","hash_tracking":"false","ua":"UA-227545445-1","v4_id":""};</script>
-<script src='https://canalaprenda.fun/wp-includes/js/jquery/jquery.min.js?ver=3.6.1' id='jquery-core-js'></script>
-<script src='https://canalaprenda.fun/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
-<link rel="https://api.w.org/" href="https://canalaprenda.fun/wp-json/" /><link rel="alternate" type="application/json" href="https://canalaprenda.fun/wp-json/wp/v2/pages/9" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://canalaprenda.fun/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://canalaprenda.fun/wp-includes/wlwmanifest.xml" />
-<meta name="generator" content="WordPress 6.1.1" />
-<link rel="canonical" href="https://canalaprenda.fun/dpps5/" />
-<link rel='shortlink' href='https://canalaprenda.fun/?p=9' />
-<link rel="alternate" type="application/json+oembed" href="https://canalaprenda.fun/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcanalaprenda.fun%2Fdpps5%2F" />
-<link rel="alternate" type="text/xml+oembed" href="https://canalaprenda.fun/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcanalaprenda.fun%2Fdpps5%2F&#038;format=xml" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /></head>
-<body class="page-template page-template-elementor_canvas page page-id-9 elementor-default elementor-template-canvas elementor-kit-5 elementor-page elementor-page-9">
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>		<div data-elementor-type="wp-page" data-elementor-id="9" class="elementor elementor-9">
-									<section class="elementor-section elementor-top-section elementor-element elementor-element-36610ef8 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="36610ef8" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-						<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7d92c58b" data-id="7d92c58b" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-								<div class="elementor-element elementor-element-354bb34b elementor-widget elementor-widget-heading" data-id="354bb34b" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-			<style>/*! elementor - v3.9.0 - 06-12-2022 */
-.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}</style><h2 class="elementor-heading-title elementor-size-default">ATENÇÃO: ASSISTA O VÍDEO ANTES QUE SAIA DO AR!</h2>		</div>
-				</div>
-					</div>
-		</div>
-							</div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-53113c6f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="53113c6f" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-							<div class="elementor-background-overlay"></div>
-							<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-5c73f55c" data-id="5c73f55c" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-								<div class="elementor-element elementor-element-55489099 elementor-widget elementor-widget-spacer" data-id="55489099" data-element_type="widget" data-widget_type="spacer.default">
-				<div class="elementor-widget-container">
-			<style>/*! elementor - v3.9.0 - 06-12-2022 */
-.elementor-column .elementor-spacer-inner{height:var(--spacer-size)}.e-con{--container-widget-width:100%}.e-con-inner>.elementor-widget-spacer,.e-con>.elementor-widget-spacer{width:var(--container-widget-width,var(--spacer-size));--align-self:var(--container-widget-align-self,initial);--flex-shrink:0}.e-con-inner>.elementor-widget-spacer>.elementor-widget-container,.e-con-inner>.elementor-widget-spacer>.elementor-widget-container>.elementor-spacer,.e-con>.elementor-widget-spacer>.elementor-widget-container,.e-con>.elementor-widget-spacer>.elementor-widget-container>.elementor-spacer{height:100%}.e-con-inner>.elementor-widget-spacer>.elementor-widget-container>.elementor-spacer>.elementor-spacer-inner,.e-con>.elementor-widget-spacer>.elementor-widget-container>.elementor-spacer>.elementor-spacer-inner{height:var(--container-widget-height,var(--spacer-size))}</style>		<div class="elementor-spacer">
-			<div class="elementor-spacer-inner"></div>
-		</div>
-				</div>
-				</div>
-				<div class="elementor-element elementor-element-457c9292 elementor-widget elementor-widget-heading" data-id="457c9292" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-			<h2 class="elementor-heading-title elementor-size-large">Sexóloga ensina <b><u>combinação espanhola</u></b> capaz de fazer qualquer mulher ter múltiplos orgasmos</h2>		</div>
-				</div>
-				<div class="elementor-element elementor-element-1501117b elementor-align-center elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="1501117b" data-element_type="widget" data-widget_type="icon-list.default">
-				<div class="elementor-widget-container">
-			<link rel="stylesheet" href="https://canalaprenda.fun/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css">		<ul class="elementor-icon-list-items">
-							<li class="elementor-icon-list-item">
-										<span class="elementor-icon-list-text">🔊 Verifique  o volume e aperte no vídeo abaixo para assistir!</span>
-									</li>
-						</ul>
-				</div>
-				</div>
-				<div class="elementor-element elementor-element-6ebd11f elementor-widget elementor-widget-html" data-id="6ebd11f" data-element_type="widget" data-widget_type="html.default">
-				<div class="elementor-widget-container">
-			<link rel="preload" href="https://scripts.converteai.net/745bab99-e8d3-4c40-afd9-9e2f02fb0999/players/63c0cdfcefa353000a44e73d/player.js" as="script">
-<link rel="preload" href="https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script">
-<link rel="preload" href="https://images.converteai.net/745bab99-e8d3-4c40-afd9-9e2f02fb0999/players/63c0cdfcefa353000a44e73d/thumbnail.jpg" as="image">
-<link rel="preload" href="https://cdn.converteai.net/745bab99-e8d3-4c40-afd9-9e2f02fb0999/63c0ccd57560dc00098f129e/playlist.m3u8" as="fetch">
-<link rel="dns-prefetch" href="https://cdn.converteai.net">
-<link rel="dns-prefetch" href="https://scripts.converteai.net">
-<link rel="dns-prefetch" href="https://images.converteai.net">
-<link rel="dns-prefetch" href="https://api.vturb.com.br">		</div>
-				</div>
-				<div class="elementor-element elementor-element-4666865b elementor-widget elementor-widget-html" data-id="4666865b" data-element_type="widget" data-widget_type="html.default">
-				<div class="elementor-widget-container">
-			<div id="vid_63c0cdfcefa353000a44e73d" style="position:relative;width:100%;padding: 56.690140845070424% 0 0;"><img decoding="async" id="thumb_63c0cdfcefa353000a44e73d" src="https://images.converteai.net/745bab99-e8d3-4c40-afd9-9e2f02fb0999/players/63c0cdfcefa353000a44e73d/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_63c0cdfcefa353000a44e73d" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_63c0cdfcefa353000a44e73d">var s=document.createElement("script");s.src="https://scripts.converteai.net/745bab99-e8d3-4c40-afd9-9e2f02fb0999/players/63c0cdfcefa353000a44e73d/player.js",s.async=!0,document.head.appendChild(s);</script>		</div>
-				</div>
-				<div class="elementor-element elementor-element-4f01c362 elementor-widget elementor-widget-spacer" data-id="4f01c362" data-element_type="widget" data-widget_type="spacer.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-spacer">
-			<div class="elementor-spacer-inner"></div>
-		</div>
-				</div>
-				</div>
-				<div class="elementor-element elementor-element-69ddd934 elementor-align-center delay animated-fast elementor-invisible elementor-widget elementor-widget-button" data-id="69ddd934" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;pulse&quot;}" data-widget_type="button.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-button-wrapper">
-			<a href="https://secure.doppus.com/pay/PZ059BMZ059BGZHHBB3" class="elementor-button-link elementor-button elementor-size-lg" role="button" id="bt_pulsar">
-						<span class="elementor-button-content-wrapper">
-							<span class="elementor-button-icon elementor-align-icon-right">
-				<i aria-hidden="true" class="far fa-hand-point-left"></i>			</span>
-						<span class="elementor-button-text">SIM! QUERO TORNAR MEU SEXO VICIANTE</span>
-		</span>
-					</a>
-		</div>
-				</div>
-				</div>
-					</div>
-		</div>
-							</div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-2ebcc27a elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2ebcc27a" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7a14df3" data-id="7a14df3" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-								<div class="elementor-element elementor-element-4152fd91 elementor-widget elementor-widget-html" data-id="4152fd91" data-element_type="widget" data-widget_type="html.default">
-				<div class="elementor-widget-container">
-			<head>
+<!-- <link rel='stylesheet' id='twentytwenty-style-css' href='https://surpreendente.fun/wp-content/themes/twentytwenty/style.css?ver=1.9' media='all' /> -->
+<link rel="stylesheet" type="text/css" href="//surpreendente.fun/wp-content/cache/wpfc-minified/e76bjhhb/4phd2.css" media="all">
+<style id="twentytwenty-style-inline-css">
+.color-accent,.color-accent-hover:hover,.color-accent-hover:focus,:root .has-accent-color,.has-drop-cap:not(:focus):first-letter,.wp-block-button.is-style-outline,a { color: #e22658; }blockquote,.border-color-accent,.border-color-accent-hover:hover,.border-color-accent-hover:focus { border-color: #e22658; }button,.button,.faux-button,.wp-block-button__link,.wp-block-file .wp-block-file__button,input[type="button"],input[type="reset"],input[type="submit"],.bg-accent,.bg-accent-hover:hover,.bg-accent-hover:focus,:root .has-accent-background-color,.comment-reply-link { background-color: #e22658; }.fill-children-accent,.fill-children-accent * { fill: #e22658; }:root .has-background-color,button,.button,.faux-button,.wp-block-button__link,.wp-block-file__button,input[type="button"],input[type="reset"],input[type="submit"],.wp-block-button,.comment-reply-link,.has-background.has-primary-background-color:not(.has-text-color),.has-background.has-primary-background-color *:not(.has-text-color),.has-background.has-accent-background-color:not(.has-text-color),.has-background.has-accent-background-color *:not(.has-text-color) { color: #ffffff; }:root .has-background-background-color { background-color: #ffffff; }body,.entry-title a,:root .has-primary-color { color: #000000; }:root .has-primary-background-color { background-color: #000000; }cite,figcaption,.wp-caption-text,.post-meta,.entry-content .wp-block-archives li,.entry-content .wp-block-categories li,.entry-content .wp-block-latest-posts li,.wp-block-latest-comments__comment-date,.wp-block-latest-posts__post-date,.wp-block-embed figcaption,.wp-block-image figcaption,.wp-block-pullquote cite,.comment-metadata,.comment-respond .comment-notes,.comment-respond .logged-in-as,.pagination .dots,.entry-content hr:not(.has-background),hr.styled-separator,:root .has-secondary-color { color: #6d6d6d; }:root .has-secondary-background-color { background-color: #6d6d6d; }pre,fieldset,input,textarea,table,table *,hr { border-color: #dbdbdb; }caption,code,code,kbd,samp,.wp-block-table.is-style-stripes tbody tr:nth-child(odd),:root .has-subtle-background-background-color { background-color: #dbdbdb; }.wp-block-table.is-style-stripes { border-bottom-color: #dbdbdb; }.wp-block-latest-posts.is-grid li { border-top-color: #dbdbdb; }:root .has-subtle-background-color { color: #dbdbdb; }body:not(.overlay-header) .primary-menu > li > a,body:not(.overlay-header) .primary-menu > li > .icon,.modal-menu a,.footer-menu a, .footer-widgets a,#site-footer .wp-block-button.is-style-outline,.wp-block-pullquote:before,.singular:not(.overlay-header) .entry-header a,.archive-header a,.header-footer-group .color-accent,.header-footer-group .color-accent-hover:hover { color: #cd2653; }.social-icons a,#site-footer button:not(.toggle),#site-footer .button,#site-footer .faux-button,#site-footer .wp-block-button__link,#site-footer .wp-block-file__button,#site-footer input[type="button"],#site-footer input[type="reset"],#site-footer input[type="submit"] { background-color: #cd2653; }.header-footer-group,body:not(.overlay-header) #site-header .toggle,.menu-modal .toggle { color: #000000; }body:not(.overlay-header) .primary-menu ul { background-color: #000000; }body:not(.overlay-header) .primary-menu > li > ul:after { border-bottom-color: #000000; }body:not(.overlay-header) .primary-menu ul ul:after { border-left-color: #000000; }.site-description,body:not(.overlay-header) .toggle-inner .toggle-text,.widget .post-date,.widget .rss-date,.widget_archive li,.widget_categories li,.widget cite,.widget_pages li,.widget_meta li,.widget_nav_menu li,.powered-by-wordpress,.to-the-top,.singular .entry-header .post-meta,.singular:not(.overlay-header) .entry-header .post-meta a { color: #6d6d6d; }.header-footer-group pre,.header-footer-group fieldset,.header-footer-group input,.header-footer-group textarea,.header-footer-group table,.header-footer-group table *,.footer-nav-widgets-wrapper,#site-footer,.menu-modal nav *,.footer-widgets-outer-wrapper,.footer-top { border-color: #dcd7ca; }.header-footer-group table caption,body:not(.overlay-header) .header-inner .toggle-wrapper::before { background-color: #dcd7ca; }
+</style>
+<!-- <link rel='stylesheet' id='twentytwenty-print-style-css' href='https://surpreendente.fun/wp-content/themes/twentytwenty/print.css?ver=1.9' media='print' /> -->
+<link rel="stylesheet" type="text/css" href="//surpreendente.fun/wp-content/cache/wpfc-minified/cdtfchi/4phd2.css" media="print">
+<!-- <link rel='stylesheet' id='elementor-icons-css' href='https://surpreendente.fun/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.18.0' media='all' /> -->
+<!-- <link rel='stylesheet' id='elementor-frontend-css' href='https://surpreendente.fun/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.11.0' media='all' /> -->
+<!-- <link rel='stylesheet' id='swiper-css' href='https://surpreendente.fun/wp-content/plugins/elementor/assets/lib/swiper/css/swiper.min.css?ver=5.3.6' media='all' /> -->
+<link rel="stylesheet" type="text/css" href="//surpreendente.fun/wp-content/cache/wpfc-minified/mlwy6p93/4plks.css" media="all">
+<link rel="stylesheet" id="elementor-post-8-css" href="https://surpreendente.fun/wp-content/uploads/elementor/css/post-8.css?ver=1676298914" media="all">
+<!-- <link rel='stylesheet' id='elementor-global-css' href='https://surpreendente.fun/wp-content/uploads/elementor/css/global.css?ver=1676298914' media='all' /> -->
+<link rel="stylesheet" type="text/css" href="//surpreendente.fun/wp-content/cache/wpfc-minified/q62r37e4/4plks.css" media="all">
+<link rel="stylesheet" id="elementor-post-1207-css" href="https://surpreendente.fun/wp-content/uploads/elementor/css/post-1207.css?ver=1676324242" media="all">
+<!-- <link rel='stylesheet' id='eael-general-css' href='https://surpreendente.fun/wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/css/view/general.min.css?ver=5.5.4' media='all' /> -->
+<!-- <link rel='stylesheet' id='SEO_estilos-css' href='https://surpreendente.fun/wp-content/plugins/facefaceface/css/jquery.fancybox.css?ver=6.1.1' media='all' /> -->
+<link rel="stylesheet" type="text/css" href="//surpreendente.fun/wp-content/cache/wpfc-minified/ko00f2au/4plks.css" media="all">
+<link rel="stylesheet" id="google-fonts-1-css" href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7COpen+Sans%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=auto&amp;ver=6.1.1" media="all">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""><script src="https://connect.facebook.net/signals/config/1245659049323453?v=2.9.95&amp;r=stable" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script src="//surpreendente.fun/wp-content/cache/wpfc-minified/1s9xqd4g/4phd2.js" type="text/javascript"></script>
+<!-- <script src='https://surpreendente.fun/wp-content/themes/twentytwenty/assets/js/index.js?ver=1.9' id='twentytwenty-js-js' async></script> -->
+<!-- <script src='https://surpreendente.fun/wp-includes/js/jquery/jquery.min.js?ver=3.6.1' id='jquery-core-js'></script> -->
+<!-- <script src='https://surpreendente.fun/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script> -->
+<!-- <script src='https://surpreendente.fun/wp-content/plugins/facefaceface/js/jquery-1.11.1.js?ver=200.7.0' id='jquery-1.11.1.js-js'></script> -->
+<!-- <script src='https://surpreendente.fun/wp-content/plugins/facefaceface/js/jquery.mousewheel-3.0.6.pack.js?ver=200.7.0' id='Anderson_Makiyama_Hot_Links_Plus_js_mousewheel-js'></script> -->
+<!-- <script src='https://surpreendente.fun/wp-content/plugins/facefaceface/js/jquery.fancybox.js?ver=200.7.0' id='Anderson_Makiyama_Hot_Links_Plus_js_fancybox-js'></script> -->
+<!-- <script src='https://surpreendente.fun/wp-content/plugins/facefaceface/js/seo.js?ver=200.7.0' id='Anderson_Makiyama_Hot_Links_Plus_js_hot-parameters-js'></script> -->
+<link rel="https://api.w.org/" href="https://surpreendente.fun/wp-json/"><link rel="alternate" type="application/json" href="https://surpreendente.fun/wp-json/wp/v2/pages/1207"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://surpreendente.fun/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://surpreendente.fun/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 6.1.1">
+<link rel="canonical" href="https://surpreendente.fun/zap-da-loto-char-v2-c2/">
+<link rel="shortlink" href="https://surpreendente.fun/?p=1207">
+<link rel="alternate" type="application/json+oembed" href="https://surpreendente.fun/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsurpreendente.fun%2Fzap-da-loto-char-v2-c2%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://surpreendente.fun/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsurpreendente.fun%2Fzap-da-loto-char-v2-c2%2F&amp;format=xml">
+<script>document.documentElement.className = document.documentElement.className.replace( 'no-js', 'js' );</script>
+<meta name="generator" content="Elementor 3.11.0; features: e_dom_optimization, e_optimized_assets_loading, a11y_improvements; settings: css_print_method-external, google_font-enabled, font_display-auto">
+<style>.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><style id="custom-background-css">
+body.custom-background { background-color: #ffffff; }
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><script src="https://player.pandavideo.com.br/api.v2.js?nowprocket&amp;version=1676159545657" async=""></script><style type="text/css">.fancybox-margin{margin-right:17px;}</style></head>
+<body class="page-template page-template-elementor_canvas page page-id-1207 custom-background wp-embed-responsive singular enable-search-modal missing-post-thumbnail has-no-pagination not-showing-comments show-avatars elementor_canvas footer-top-visible reduced-spacing elementor-default elementor-template-canvas elementor-kit-8 elementor-page elementor-page-1207 e--ua-blink e--ua-chrome e--ua-webkit vsc-initialized" data-elementor-device-mode="mobile">
+<a class="skip-link screen-reader-text" href="#site-content">Pular para o conteúdo</a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 0.49803921568627"></feFuncR><feFuncG type="table" tableValues="0 0.49803921568627"></feFuncG><feFuncB type="table" tableValues="0 0.49803921568627"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 1"></feFuncR><feFuncG type="table" tableValues="0 1"></feFuncG><feFuncB type="table" tableValues="0 1"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765"></feFuncR><feFuncG type="table" tableValues="0 1"></feFuncG><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 1"></feFuncR><feFuncG type="table" tableValues="0 0.27843137254902"></feFuncG><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 0"></feFuncR><feFuncG type="table" tableValues="0 0.64705882352941"></feFuncG><feFuncB type="table" tableValues="0 1"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.78039215686275 1"></feFuncR><feFuncG type="table" tableValues="0 0.94901960784314"></feFuncG><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745"></feFuncR><feFuncG type="table" tableValues="0 1"></feFuncG><feFuncB type="table" tableValues="0.44705882352941 0.4"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.098039215686275 1"></feFuncR><feFuncG type="table" tableValues="0 0.66274509803922"></feFuncG><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg>		<div data-elementor-type="wp-page" data-elementor-id="1207" class="elementor elementor-1207">
+<section class="elementor-section elementor-top-section elementor-element elementor-element-3b22bacc elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="3b22bacc" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-48b48e9f" data-id="48b48e9f" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-1676f3e4 elementor-widget elementor-widget-text-editor" data-id="1676f3e4" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-70941d48 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="70941d48" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3ea074f5" data-id="3ea074f5" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-4b9b9b7d elementor-widget elementor-widget-text-editor" data-id="4b9b9b7d" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<span style="letter-spacing: -0.27px;">⚠️ Você e outras 22 pessoas próximas a&nbsp;<span id="cidade" style="color: #ffcc00;">Guarapari</span> foram selecionadas para assistir esse vídeo secreto!&nbsp;</span>						</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-74121b9e elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="74121b9e" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-background-overlay"></div>
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-15277011" data-id="15277011" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-651c57b2 elementor-widget elementor-widget-html" data-id="651c57b2" data-element_type="widget" data-widget_type="html.default">
+<div class="elementor-widget-container">
+<script>
+var request = new XMLHttpRequest();
+request.open('GET', 'https://wtfismyip.com/json', true);
+request.onload = function () {
+if (this.status >= 200 && this.status < 400) {
+var data = JSON.parse(this.response);
+let output = data.YourFuckingLocation.replace(/\,.+/g, "$'");
+document.getElementById("cidade").innerHTML = output;
+} else {}
+};
+request.onerror = function () {};
+request.send();
+</script>		</div>
+</div>
+<div class="elementor-element elementor-element-a8bfee2 elementor-widget elementor-widget-image" data-id="a8bfee2" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<img decoding="async" width="580" height="221" src="https://surpreendente.fun/wp-content/uploads/2023/01/headline-preta.png" class="attachment-large size-large wp-image-1076" alt="" loading="lazy" srcset="https://surpreendente.fun/wp-content/uploads/2023/01/headline-preta.png 630w, https://surpreendente.fun/wp-content/uploads/2023/01/headline-preta-300x114.png 300w" sizes="(max-width: 580px) 100vw, 580px">															</div>
+</div>
+<div class="elementor-element elementor-element-2ca03b49 elementor-widget elementor-widget-text-editor" data-id="2ca03b49" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<p>A caixa tem medo que você veja esse vídeo <span class="fe5nidar khvhiq1o r5qsrrlp i5tg98hk f9ovudaz przvwfww gx1rr48f gfz4du6o r7fjleex nz2484kf svot0ezm dcnh1tix sxl192xd t3g6t33p"><span class="mpj7bzys xzlurrtv">😱</span></span></p>						</div>
+</div>
+<div class="elementor-element elementor-element-f770c38 elementor-widget elementor-widget-html" data-id="f770c38" data-element_type="widget" data-widget_type="html.default">
+<div class="elementor-widget-container">
+<script>if(!document.querySelector('script[src^="https://player.pandavideo.com.br/api.v2.js"]')){let s=document.createElement('script'); s.src='https://player.pandavideo.com.br/api.v2.js?nowprocket&version=1676159545657'; s.async=true; document.head.appendChild(s);} window.pandascripttag=window.pandascripttag || []; window.pandascripttag.push(function (){const p=new PandaPlayer('03a2250c-f528-4961-aa41-3eecbc31b02e',{onReady() {p.loadButtonInTime({fetchApi: true})}, library_id: 'vz-ffe7749a-027', video_id: '03a2250c-f528-4961-aa41-3eecbc31b02e', defaultStyle: true});});</script><div id="03a2250c-f528-4961-aa41-3eecbc31b02e" style="position: relative; padding-top: 56.25%;">
+          <iframe id="panda-03a2250c-f528-4961-aa41-3eecbc31b02e" style="border: none; position: absolute; top: 0px; height: 100%; width: 363px;" src="https://player-vz-ffe7749a-027.tv.pandavideo.com.br/embed/?v=03a2250c-f528-4961-aa41-3eecbc31b02e" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowfullscreen="true" data-origwidth="" data-origheight=""></iframe>
+          </div>		</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-49b85cd6 esconder elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="49b85cd6" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;none&quot;}" style="display: none;">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-5d8f3178" data-id="5d8f3178" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-1f60304f elementor-align-center elementor-widget elementor-widget-button" data-id="1f60304f" data-element_type="widget" data-widget_type="button.default">
+<div class="elementor-widget-container">
+<div class="elementor-button-wrapper">
+<a href="https://pay.kiwify.com.br/Z0TYGaT" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+<span class="elementor-button-content-wrapper">
+<span class="elementor-button-text">Garantir 14 pontos</span>
+</span>
+</a>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-5af2e734 elementor-widget elementor-widget-image" data-id="5af2e734" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<img decoding="async" width="580" height="125" src="https://surpreendente.fun/wp-content/uploads/2022/02/compra-segura-1-1024x221-1.png" class="attachment-large size-large wp-image-813" alt="" loading="lazy" srcset="https://surpreendente.fun/wp-content/uploads/2022/02/compra-segura-1-1024x221-1.png 1024w, https://surpreendente.fun/wp-content/uploads/2022/02/compra-segura-1-1024x221-1-300x65.png 300w, https://surpreendente.fun/wp-content/uploads/2022/02/compra-segura-1-1024x221-1-768x166.png 768w" sizes="(max-width: 580px) 100vw, 580px">															</div>
+</div>
+<div class="elementor-element elementor-element-6b5dba76 elementor-widget elementor-widget-image" data-id="6b5dba76" data-element_type="widget" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<img decoding="async" width="580" height="87" src="https://surpreendente.fun/wp-content/uploads/2022/02/cta-selos.png" class="attachment-large size-large wp-image-814" alt="" loading="lazy" srcset="https://surpreendente.fun/wp-content/uploads/2022/02/cta-selos.png 585w, https://surpreendente.fun/wp-content/uploads/2022/02/cta-selos-300x45.png 300w" sizes="(max-width: 580px) 100vw, 580px">															</div>
+</div>
+<section class="elementor-section elementor-inner-section elementor-element elementor-element-76fe9822 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="76fe9822" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-63e4577c" data-id="63e4577c" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-256b00a elementor-widget elementor-widget-text-editor" data-id="256b00a" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<p style="text-align: center;">O app número 1 quando o assunto é 14 e 15 pontos na Lotofácil!</p>						</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-inner-section elementor-element elementor-element-7ada2bfe elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="7ada2bfe" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-432b6ea1" data-id="432b6ea1" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-49787b2d elementor-widget elementor-widget-text-editor" data-id="49787b2d" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<p style="text-align: center;">(Confira os resultados de nossos usuários logo abaixo) <span style="font-weight: bold; letter-spacing: -0.27px;">↓↓↓</span></p>						</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-inner-section elementor-element elementor-element-4383e3b0 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4383e3b0" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-363769e6" data-id="363769e6" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated e-swiper-container">
+<div class="elementor-element elementor-element-4b3aa246 elementor-arrows-position-outside elementor-pagination-position-outside elementor-widget elementor-widget-image-carousel e-widget-swiper" data-id="4b3aa246" data-element_type="widget" data-settings="{&quot;speed&quot;:400,&quot;autoplay_speed&quot;:4000,&quot;navigation&quot;:&quot;both&quot;,&quot;autoplay&quot;:&quot;yes&quot;,&quot;pause_on_hover&quot;:&quot;yes&quot;,&quot;pause_on_interaction&quot;:&quot;yes&quot;,&quot;infinite&quot;:&quot;yes&quot;,&quot;image_spacing_custom&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:20,&quot;sizes&quot;:[]},&quot;image_spacing_custom_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;image_spacing_custom_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="image-carousel.default">
+<div class="elementor-widget-container">
+<div class="elementor-image-carousel-wrapper swiper-container swiper-container-initialized swiper-container-horizontal" dir="ltr">
+<div class="elementor-image-carousel swiper-wrapper" style="transition-duration: 400ms;"><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="7"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://surpreendente.fun/wp-content/uploads/2023/01/08.png" alt="08.png"></figure></div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="8"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://surpreendente.fun/wp-content/uploads/2023/01/09.png" alt="09.png"></figure></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="9"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://surpreendente.fun/wp-content/uploads/2023/01/10.png" alt="10.png"></figure></div>
+<div class="swiper-slide" data-swiper-slide-index="0"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://surpreendente.fun/wp-content/uploads/2023/01/01.png" alt="01.png"></figure></div><div class="swiper-slide" data-swiper-slide-index="1"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://surpreendente.fun/wp-content/uploads/2023/01/02.png" alt="02.png"></figure></div><div class="swiper-slide" data-swiper-slide-index="2"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://surpreendente.fun/wp-content/uploads/2023/01/03.png" alt="03.png"></figure></div><div class="swiper-slide" data-swiper-slide-index="3"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://surpreendente.fun/wp-content/uploads/2023/01/04.png" alt="04.png"></figure></div><div class="swiper-slide" data-swiper-slide-index="4"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://surpreendente.fun/wp-content/uploads/2023/01/05.png" alt="05.png"></figure></div><div class="swiper-slide" data-swiper-slide-index="5"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://surpreendente.fun/wp-content/uploads/2023/01/06.png" alt="06.png"></figure></div><div class="swiper-slide" data-swiper-slide-index="6"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://surpreendente.fun/wp-content/uploads/2023/01/07.png" alt="07.png"></figure></div><div class="swiper-slide" data-swiper-slide-index="7"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://surpreendente.fun/wp-content/uploads/2023/01/08.png" alt="08.png"></figure></div><div class="swiper-slide" data-swiper-slide-index="8"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://surpreendente.fun/wp-content/uploads/2023/01/09.png" alt="09.png"></figure></div><div class="swiper-slide" data-swiper-slide-index="9"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://surpreendente.fun/wp-content/uploads/2023/01/10.png" alt="10.png"></figure></div>			<div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://surpreendente.fun/wp-content/uploads/2023/01/01.png" alt="01.png"></figure></div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://surpreendente.fun/wp-content/uploads/2023/01/02.png" alt="02.png"></figure></div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://surpreendente.fun/wp-content/uploads/2023/01/03.png" alt="03.png"></figure></div></div>
+<div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>
+<div class="elementor-swiper-button elementor-swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide">
+<i aria-hidden="true" class="eicon-chevron-left"></i>						<span class="elementor-screen-only">Anterior</span>
+</div>
+<div class="elementor-swiper-button elementor-swiper-button-next" tabindex="0" role="button" aria-label="Next slide">
+<i aria-hidden="true" class="eicon-chevron-right"></i>						<span class="elementor-screen-only">Próximo</span>
+</div>
+<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-36f7c87 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="36f7c87" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-22d6d52" data-id="22d6d52" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-4440db73 elementor-widget elementor-widget-html" data-id="4440db73" data-element_type="widget" data-widget_type="html.default">
+<div class="elementor-widget-container">
+
+<style>
+html,body{text-align:center;font-size:1.1rem;line-height:1.3rem}h1,h2,h3{font-size:1.6rem;line-height:1.8rem}h1{font-weight:700}h3{line-height:1.5rem!important}.container{max-width:1000px}footer,footer a{color:#999;font-size:.8rem;line-height:1rem;text-decoration:none}strong.cve,strong.cvo{color:#fff!important;-webkit-border-radius:100px;-moz-border-radius:100px;border-radius:100px;white-space:nowrap;padding:0 10px}strong.cve{background-color:#34bf49}strong.cvo{background-color:#ea4335}.modal b{white-space:nowrap}.botao,.botao:hover{cursor:pointer;background-color:#44c767;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;display:inline-block;color:#006400;font-size:.8rem;line-height:1rem;text-decoration:none!important;padding:1rem}.botao .text-uppercase,.modal .botao{color:#fff;font-size:2.3rem;font-weight:700;line-height:2.3rem;text-shadow:1px 1px 0 #2f6627}.modal .botao{font-size:1.8rem;line-height:1.8rem}.botao:hover{background-color:#2c9f45;color:#fff}.botao:active{position:relative;top:1px}.fx1{background:#f1f1f1;color:#000}.fx2{background:#000;color:#fff}#perguntas{text-align:justify}#perguntas dt{font-weight:700;margin-top:1rem}.cve{color:#34bf49}.cvo{color:#ea4335}.pulsar{animation-name:pulse;-webkit-animation-name:pulse;animation-duration:1.5s;-webkit-animation-duration:1.5s;animation-iteration-count:infinite;-webkit-animation-iteration-count:infinite}@keyframes pulse{0%,100%{transform:scale(.9);opacity:.9}50%{transform:scale(1);opacity:1}}@-webkit-keyframes pulse{0%,100%{-webkit-transform:scale(.95);opacity:.7}50%{-webkit-transform:scale(1);opacity:1}}@media(min-width:768px){html,body{font-size:1.2rem;line-height:1.5rem}h1,h2{font-size:2.2rem;line-height:2.4rem}footer,footer a{font-size:.75rem;line-height:.9rem}.botao,.botao:hover{padding:1.5rem 2.5rem}.botao .text-uppercase{font-size:2rem;line-height:2rem}}#comentarios{font-family:arial;background-color:#f6f7f9;font-size:14px;text-align:left;padding:10px 10px 0}.titulo{border-bottom:1px solid #e9ebee;display:block;padding-bottom:6px}.perfil{display:block;padding:10px 0;line-height:20px}.perfil p{margin:0;padding:0}.perfil .nome{color:#365899;font-weight:700}.nome img{float:left;padding-right:10px}.info{font-size:11px;color:#90949c}.info span{color:#4267b2;text-decoration:none}.resp{border-left:1px solid #e9ebee;margin-left:50px;padding:0 0 0 9px}:root{--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px}*,::after,::before{box-sizing:border-box}.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
+</style>
+<div class="container">
+<div id="comentarios" class="my-4">
+<span class="titulo"><b>61 comentários</b> - <small>Exibindo os 14 mais relevantes</small></span>
+<div class="perfil">
+<span class="nome"><img decoding="async" src="https://virtualsilence.com.br/images/l1.png" alt="">Euclides Lourenço</span>
+<p>esse é facil de usar? comprei uma planilha que não funciona</p>
+<span class="info">Responder · Curtir · Seguir · 58 min</span>
+</div>
+<div class="perfil resp">
+<span class="nome"><img decoding="async" src="https://virtualsilence.com.br/images/l2.png" alt="">Milena Soares Dias</span>
+<p>Simm é bem simples e muitooo melhor que as planilhas, to amando!</p>
+<span class="info">Responder · Curtir · Seguir · 35 min</span>
+</div>
+<div class="perfil">
+<span class="nome"><img decoding="async" src="https://virtualsilence.com.br/images/l21.png" alt="">Dinaura Macedo</span>
+<p>Já comprei tanta tranqueira, sistema que nunca me ajudou pra nada, graças há Deus existe um aplicativo que presta no meio de tantos, enfim saiu meus 14 pontos! Não to nem acreditando</p>
+<p><img decoding="async" src="https://virtualsilence.com.br/images/dep1.png" alt=""></p>
+<span class="info">Responder · Curtir · Seguir · 54 min</span>
+</div>
+<div class="perfil">
+<span class="nome"><img decoding="async" src="https://virtualsilence.com.br/images/l19.png" alt="">Vanessa Santanna</span>
+<p>Meu pai não entende nada de computador, mas esse ele usa no celular e já tá ganhando os primeiros prêmios feliz da vida kk</p>
+<span class="info">Responder · Curtir · Seguir · 51 min</span>
+</div>
+<div class="perfil">
+<span class="nome"><img decoding="async" src="https://virtualsilence.com.br/images/l6.png" alt="">Geraldo R Pereira</span>
+<p>O investimento compensou muito, pra mim já está virando uma renda extra mensal.</p>
+<span class="info">Responder · Curtir · Seguir · 49 min</span>
+</div>
+<div class="perfil">
+<span class="nome"><img decoding="async" src="https://virtualsilence.com.br/images/l4.png" alt="">Adilson Queiroz</span>
+<p>Esse é o cara, melhor APP que ja vi!!! Top </p>
+<span class="info">Responder · Curtir · Seguir · 44 min</span>
+</div>
+<div class="perfil">
+<span class="nome"><img decoding="async" src="https://virtualsilence.com.br/images/l5.png" alt="">Sueli Cristina Moreira</span>
+<p>Jogava a vida inteira sempre com 11 e 12 pontos rsrs Nem imaginava que existia isso de aplicativo, agora rumo aos 14! </p>
+<span class="info">Responder · Curtir · Seguir · 37 min</span>
+</div>
+<div class="perfil">
+<span class="nome"><img decoding="async" src="https://virtualsilence.com.br/images/l10.png" alt="">Nelson Santos Manutenção</span>
+<p>acho que isso não funciona fácil assim não conversa fiada</p>
+<span class="info">Responder · Curtir · Seguir · 27 min</span>
+</div>
+<div class="perfil resp">
+<span class="nome"><img decoding="async" src="https://virtualsilence.com.br/images/l11.png" alt="">Silvia Rodrigues</span>
+<p>Continua pensando assim que a concorrência nos prêmios é menor!</p>
+<span class="info">Responder · Curtir · Seguir · 22 min</span>
+</div>
+<div class="perfil resp">
+<span class="nome"><img decoding="async" src="https://virtualsilence.com.br/images/l12.png" alt="">Diego Moraes</span>
+<p>kkkkkkkk né Silvia!&nbsp;</p>
+<span class="info">Responder · Curtir · Seguir · 19 min</span>
+</div>
+<div class="perfil">
+<span class="nome"><img decoding="async" src="https://virtualsilence.com.br/images/l7.png" alt="">Luiza Nascimento</span>
+<p>Tem algum telefone para eu entrar em contato?</p>
+<span class="info">Responder · Curtir · Seguir · 17 min</span>
+</div>
+<div class="perfil resp">
+<span class="nome"><img decoding="async" src="https://virtualsilence.com.br/images/l8.png" alt="">Raimundo Teixeira</span>
+<p>Oi Luiza, tem um suporte no whatsapp pra responder dúvidas</p>
+<span class="info">Responder · Curtir · Seguir · 9 min</span>
+</div>
+<div class="perfil">
+<span class="nome"><img decoding="async" src="https://virtualsilence.com.br/images/l23.png" alt="">Dr. Valter Magalhães e Associados</span>
+<p>Na internet não dá para acreditar em tudo o que vemos, então faço questão de deixar minha opinião. A APP funciona de verdade e é confiável, nota 10. Se for do interesse do Lotohub me ofereço para divulgar essa solução para mais pessoas, mandei um email. Abç</p>
+<span class="info">Responder · Curtir · Seguir · 8 min</span>
+</div>
+<div class="perfil">
+<span class="nome"><img decoding="async" src="https://virtualsilence.com.br/images/l24.png" alt="">Marcos Carella</span>
+<p>Esse app eh o melhor, funciona sem travar em qualquer aparelho.. To usando nos meus jogos e ja fiz 14 pontos duas vezes, acredito que logo logo vem os 15!!</p>
+<p><img decoding="async" src="https://virtualsilence.com.br/images/dep2.png" alt=""></p>
+<span class="info">Responder · Curtir · Seguir · 3min</span>
+</div>		</div>
+</div>
+<div class="elementor-element elementor-element-2b09898 elementor-align-center esconder elementor-widget elementor-widget-button" data-id="2b09898" data-element_type="widget" data-widget_type="button.default" style="display: none;">
+<div class="elementor-widget-container">
+<div class="elementor-button-wrapper">
+<a href="https://pay.kiwify.com.br/Z0TYGaT" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+<span class="elementor-button-content-wrapper">
+<span class="elementor-button-text">Garantir 14 pontos</span>
+</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div></section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-25fca903 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="25fca903" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-6446be6a" data-id="6446be6a" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-5172ff81 elementor-widget elementor-widget-html" data-id="5172ff81" data-element_type="widget" data-widget_type="html.default">
+<div class="elementor-widget-container">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-</head>
 
 <script>
-$('.delay').hide();
+$('.esconder').hide();
 setTimeout(function() {
-$('.delay').show();
-}, 1309300);
+$('.esconder').fadeIn('slow');
+}, 1092 * 1 * 1000); // 780 é a quantidade em segundos do delay
 </script>
-		</div>
-				</div>
-				<div class="elementor-element elementor-element-1b4d42fa elementor-widget elementor-widget-text-editor" data-id="1b4d42fa" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-			<style>/*! elementor - v3.9.0 - 06-12-2022 */
-.elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap{background-color:#818a91;color:#fff}.elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap{color:#818a91;border:3px solid;background-color:transparent}.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap{margin-top:8px}.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap-letter{width:1em;height:1em}.elementor-widget-text-editor .elementor-drop-cap{float:left;text-align:center;line-height:1;font-size:50px}.elementor-widget-text-editor .elementor-drop-cap-letter{display:inline-block}</style>				<p>Copyright 2022 &#8211; ® Todos os direitos reservados</p>						</div>
-				</div>
-					</div>
-		</div>
-							</div>
-		</section>
-							</div>
-		<link rel='stylesheet' id='e-animations-css' href='https://canalaprenda.fun/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.9.0' media='all' />
-<script src='https://canalaprenda.fun/wp-content/themes/hello-elementor/assets/js/hello-frontend.min.js?ver=1.0.0' id='hello-theme-frontend-js'></script>
-<script src='https://canalaprenda.fun/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.7.7' id='elementor-pro-webpack-runtime-js'></script>
-<script src='https://canalaprenda.fun/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.9.0' id='elementor-webpack-runtime-js'></script>
-<script src='https://canalaprenda.fun/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.9.0' id='elementor-frontend-modules-js'></script>
-<script src='https://canalaprenda.fun/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9' id='regenerator-runtime-js'></script>
-<script src='https://canalaprenda.fun/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
-<script src='https://canalaprenda.fun/wp-includes/js/dist/hooks.min.js?ver=4169d3cf8e8d95a3d6d5' id='wp-hooks-js'></script>
-<script src='https://canalaprenda.fun/wp-includes/js/dist/i18n.min.js?ver=9e794f35a71bb98672ae' id='wp-i18n-js'></script>
-<script id='wp-i18n-js-after'>
-wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+<style>
+/*Botão Pulsa*/
+.pulse {
+-webkit-animation: pulse 1s ease infinite;
+-moz-animation: pulse 1s ease infinite;
+-ms-animation: pulse 1s ease infinite;
+-o-animation: pulse 1s ease infinite;
+animation: pulse 1s ease infinite;
+}
+@-webkit-keyframes pulse {
+0% {
+-webkit-transform: scale(1);
+}
+25% {
+-webkit-transform: scale(1.1);
+}
+50% {
+-webkit-transform: scale(1);
+}
+100% {
+-webkit-transform: scale(1);
+}
+}
+@-moz-keyframes pulse {
+0% {
+-moz-transform: scale(1);
+}
+25% {
+-moz-transform: scale(1.1);
+}
+50% {
+-moz-transform: scale(1);
+}
+100% {
+-moz-transform: scale(1);
+}
+}
+@-ms-keyframes pulse {
+0% {
+-ms-transform: scale(1);
+}
+25% {
+-ms-transform: scale(1.1);
+}
+50% {
+-ms-transform: scale(1);
+}
+100% {
+-ms-transform: scale(1);
+}
+}
+@-o-keyframes pulse {
+0% { -o-transform: scale(1); }
+25% { -o-transform: scale(1.1); }
+50% { -o-transform: scale(1); }
+100% { -o-transform: scale(1); } 
+}
+@keyframes pulse { 
+0% {transform: scale(1);}
+50% {transform: scale(1.1);}
+100% {transform: scale(1);}
+}
+/*Botão Pulsa*/
+</style>		</div>
+</div>
+<div class="elementor-element elementor-element-c1eef8d elementor-widget elementor-widget-html" data-id="c1eef8d" data-element_type="widget" data-widget_type="html.default">
+<div class="elementor-widget-container">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1245659049323453');
+fbq('track', 'PageView');
 </script>
-<script id='elementor-pro-frontend-js-before'>
-var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/canalaprenda.fun\/wp-admin\/admin-ajax.php","nonce":"f90f6ca042","urls":{"assets":"https:\/\/canalaprenda.fun\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/canalaprenda.fun\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"pt_BR","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/canalaprenda.fun\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1245659049323453&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->		</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-30f3bf76 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="30f3bf76" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-626f17c3" data-id="626f17c3" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-2a18dc9 elementor-widget elementor-widget-text-editor" data-id="2a18dc9" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<p style="text-align: center;"><span style="font-size: inherit; text-align: inherit; letter-spacing: -0.015em;">CNPJ:&nbsp;07.342.893/0001-00&nbsp;</span></p>
+<p><span style="letter-spacing: -0.27px;">Big Tec ®&nbsp;</span>Copyright 2022 – Todos os direitos reservados.</p>
+<p><span style="font-size: inherit; text-align: inherit; letter-spacing: -0.015em;">Aviso: Esse site não garante nenhum tipo de resultado, o resultado vária de pessoa para pessoa e os investimentos podem causar perdas ao investidor.</span><br></p>						</div>
+</div>
+<div class="elementor-element elementor-element-1699c502 elementor-widget elementor-widget-text-editor" data-id="1699c502" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<p style="text-align: center;"><span style="font-size: inherit; letter-spacing: -0.015em;"><span style="color: #999999;"><span style="text-decoration: underline;"><a style="color: #999999; text-decoration: underline;" href="/termos">Termos de Uso</a></span><a style="color: #999999;" href="https://lotoplusmais.life/termos/">&nbsp;</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="text-decoration: underline;"><a style="color: #999999; text-decoration: underline;" href="/politica/">Política de Privacidade</a></span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a style="color: #999999;" href="/aviso-legal"><span style="text-decoration: underline;">Aviso Legal</span></a></span></span></p>						</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script id="eael-general-js-extra">
+var localize = {"ajaxurl":"https:\/\/surpreendente.fun\/wp-admin\/admin-ajax.php","nonce":"18fde71411","i18n":{"added":"Added ","compare":"Compare","loading":"Loading..."},"eael_translate_text":{"required_text":"is a required field","invalid_text":"Invalid","billing_text":"Billing","shipping_text":"Shipping"},"page_permalink":"https:\/\/surpreendente.fun\/zap-da-loto-char-v2-c2\/","cart_redirectition":"","cart_page_url":"","el_breakpoints":{"mobile":{"label":"Celular","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Celular extra","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet extra","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}};
 </script>
-<script src='https://canalaprenda.fun/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.7.7' id='elementor-pro-frontend-js'></script>
-<script src='https://canalaprenda.fun/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2' id='elementor-waypoints-js'></script>
-<script src='https://canalaprenda.fun/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2' id='jquery-ui-core-js'></script>
-<script id='elementor-frontend-js-before'>
-var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Compartilhar no Facebook","shareOnTwitter":"Compartilhar no Twitter","pinIt":"Fixar","download":"Baixar","downloadImage":"Baixar imagem","fullscreen":"Tela cheia","zoom":"Zoom","share":"Compartilhar","playVideo":"Reproduzir v\u00eddeo","previous":"Anterior","next":"Pr\u00f3ximo","close":"Fechar"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Celular","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Celular extra","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet extra","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.9.0","is_static":false,"experimentalFeatures":{"e_dom_optimization":true,"e_optimized_assets_loading":true,"e_optimized_css_loading":true,"a11y_improvements":true,"additional_custom_breakpoints":true,"e_import_export":true,"e_hidden_wordpress_widgets":true,"theme_builder_v2":true,"hello-theme-header-footer":true,"landing-pages":true,"elements-color-picker":true,"favorite-widgets":true,"admin-top-bar":true,"kit-elements-defaults":true,"page-transitions":true,"notes":true,"form-submissions":true,"e_scroll_snap":true},"urls":{"assets":"https:\/\/canalaprenda.fun\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description","hello_header_logo_type":"title","hello_footer_logo_type":"logo"},"post":{"id":9,"title":"dpps5%20%E2%80%93%20canalaprenda","excerpt":"","featuredImage":false}};
+<script src="https://surpreendente.fun/wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/js/view/general.min.js?ver=5.5.4" id="eael-general-js"></script>
+<script src="https://surpreendente.fun/wp-content/plugins/facefaceface/js/auto-link.js?ver=200.7.0" id="Anderson_Makiyama_Hot_Links_Plus_js_auto_links-js"></script>
+<script src="https://surpreendente.fun/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.11.0" id="elementor-webpack-runtime-js"></script>
+<script src="https://surpreendente.fun/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.11.0" id="elementor-frontend-modules-js"></script>
+<script src="https://surpreendente.fun/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2" id="elementor-waypoints-js"></script>
+<script src="https://surpreendente.fun/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2" id="jquery-ui-core-js"></script>
+<script id="elementor-frontend-js-before">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Compartilhar no Facebook","shareOnTwitter":"Compartilhar no Twitter","pinIt":"Fixar","download":"Baixar","downloadImage":"Baixar imagem","fullscreen":"Tela cheia","zoom":"Zoom","share":"Compartilhar","playVideo":"Reproduzir v\u00eddeo","previous":"Anterior","next":"Pr\u00f3ximo","close":"Fechar"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Celular","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Celular extra","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet extra","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.11.0","is_static":false,"experimentalFeatures":{"e_dom_optimization":true,"e_optimized_assets_loading":true,"a11y_improvements":true,"landing-pages":true,"kit-elements-defaults":true},"urls":{"assets":"https:\/\/surpreendente.fun\/wp-content\/plugins\/elementor\/assets\/"},"swiperClass":"swiper-container","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":1207,"title":"zap-da-loto-char-v2%20%28c2%29","excerpt":"","featuredImage":false}};
 </script>
-<script src='https://canalaprenda.fun/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.9.0' id='elementor-frontend-js'></script>
-<script src='https://canalaprenda.fun/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.7.7' id='pro-elements-handlers-js'></script>
-	</body>
-</html>
-<script>console.log('dpps5');</script>
+<script src="https://surpreendente.fun/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.11.0" id="elementor-frontend-js"></script><span id="elementor-device-mode" class="elementor-screen-only"></span>
+<script>
+/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+</script>
+
+<script src="https://surpreendente.fun/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js?ver=5.3.6"></script></body></html>
