@@ -467,7 +467,7 @@ add();
 								<div class="elementor-element elementor-element-45413ebb elementor-align-center ocultar numbers elementor-widget elementor-widget-button" data-id="45413ebb" data-element_type="widget" data-widget_type="button.default" style="visibility: visible; display: block;">
 				<div class="elementor-widget-container">
 					<div class="elementor-button-wrapper">
-			<a href="https://pay.kiwify.com.br/UnHqeXP" class="elementor-button-link elementor-button elementor-size-sm" role="button" id="pulse">
+			<a href="https://go.perfectpay.com.br/PPU38CLM44G" class="elementor-button-link elementor-button elementor-size-sm" role="button" id="pulse">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">QUERO LUCRAR AGORA !</span>
 		</span>
@@ -1157,27 +1157,20 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 </script>
 <script src="https://tutorialz.com.br/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.6.6" id="elementor-frontend-js"></script><span id="elementor-device-mode" class="elementor-screen-only"></span>
 <script src="https://tutorialz.com.br/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.7.2" id="pro-elements-handlers-js"></script><svg style="display: none;" class="e-font-icon-svg-symbols"></svg>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-   let prefix = ["https://pay.kiwify.com.br"];
- 
-function getParams() {
-   let t = "",
-     e = window.top.location.href,
-     r = new URL(e);
-   if (null != r) {
-     let a = r.searchParams.get("utm_source"),
-       n = r.searchParams.get("utm_medium"),
-       o = r.searchParams.get("utm_campaign"),
-       m = r.searchParams.get("utm_term"),
-       c = r.searchParams.get("utm_content"); - 1 !== e.indexOf("?") && (t = `&sck=${a}|${n}|${o}|${m}|${c}`), console.log(t)
-   }
-   return t
-}! function() {
-   var t = new URLSearchParams(window.location.search);
-   t.toString() && document.querySelectorAll("a").forEach(function(e) {
-     for (let r = 0; r < prefix.length; r++) - 1 !== e.href.indexOf(prefix[r]) && (-1 === e.href.indexOf("?") ? e.href += "?" + t.toString() + getParams() : e.href += "&" + t.toString() + getParams())
-   })
-}(); </script>
+  (function ($) {
+    $('a').each(function () {
+      let href = $(this).attr("href");
+      if (href === undefined || href.indexOf("#") >= 0 || href.indexOf("api.whatsapp") >= 0) return true;
+      // if (href.indexOf("perfectpay") == -1) return true; 
+      let search_params = document.location.search.replace('?', '');
+      let urlFinal = href + (href.indexOf("?") > 0 ? '&' : '?') + search_params.toString();
+      $(this).attr("href", urlFinal);
+    });
+  })(jQuery);
+</script>
+
 	
 
 </body></html>
