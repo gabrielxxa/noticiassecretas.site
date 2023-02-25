@@ -219,7 +219,7 @@
     </div>
 </div>
 
-</div></div><div id="callaction_63ee3805194dfe000c2957e5_0" class="smartplayer-call-action smartplayer-hide smartplayer-call-action__bc callaction_63ee3805194dfe000c2957e5_0"><style>.smartplayer-call-action.smartplayer-hide {display: none}.smartplayer-call-action.callaction_63ee3805194dfe000c2957e5_0 {text-align: center;padding: 40px 10px;}.smartplayer-call-action.callaction_63ee3805194dfe000c2957e5_0 a.smartplayer-call-action--link {background-color: #1BBB0B;color: #FFFFFF;padding: 1em 3em;display: inline-block;border-radius: 0.4em;font-size: 26px;line-height: 1;font-weight: 600;box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);text-decoration: none;}.smartplayer-call-action.callaction_63ee3805194dfe000c2957e5_0 a.smartplayer-call-action--link:hover {background-color: #039900;color: #FFFFFF;text-decoration: none;}</style><a href="https://pay.kiwify.com.br/sgY9vG0?src=AM-5571-B02" title="QUERO ACESSAR AGORA!" target="_parent" class="smartplayer-call-action--link smartplayer-call-action-transfer-utm">QUERO ACESSAR AGORA!</a></div>
+</div></div><div id="callaction_63ee3805194dfe000c2957e5_0" class="smartplayer-call-action smartplayer-hide smartplayer-call-action__bc callaction_63ee3805194dfe000c2957e5_0"><style>.smartplayer-call-action.smartplayer-hide {display: none}.smartplayer-call-action.callaction_63ee3805194dfe000c2957e5_0 {text-align: center;padding: 40px 10px;}.smartplayer-call-action.callaction_63ee3805194dfe000c2957e5_0 a.smartplayer-call-action--link {background-color: #1BBB0B;color: #FFFFFF;padding: 1em 3em;display: inline-block;border-radius: 0.4em;font-size: 26px;line-height: 1;font-weight: 600;box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);text-decoration: none;}.smartplayer-call-action.callaction_63ee3805194dfe000c2957e5_0 a.smartplayer-call-action--link:hover {background-color: #039900;color: #FFFFFF;text-decoration: none;}</style><a href="https://go.perfectpay.com.br/PPU38CLMI0B" title="QUERO ACESSAR AGORA!" target="_parent" class="smartplayer-call-action--link smartplayer-call-action-transfer-utm">QUERO ACESSAR AGORA!</a></div>
                     <script type="text/javascript" id="scr_63ee3805194dfe000c2957e5">var s = document.createElement("script"); s.src = "https://scripts.converteai.net/92be81cf-06f2-4dc3-9145-e762e8be94b8/players/63ee3805194dfe000c2957e5/player.js", s.async = !0, document.head.appendChild(s);</script>
                 </div>
                 <div class="text-center">
@@ -715,7 +715,7 @@
                 hasChanged: function () {
                     if (b.location.hash == "#no-back") {
                         b.location.hash = "#";
-                        b.location.href = 'https://pay.kiwify.com.br/sgY9vG0/?src=' + src + "&utm_source=back_redirect"; //LINK PARA REDIRECIONAR AQUI
+                        b.location.href = 'https://go.perfectpay.com.br/PPU38CLMI0B' + src + "&utm_source=back_redirect"; //LINK PARA REDIRECIONAR AQUI
                     }
                 },
                 checkCompat: function () {
@@ -735,7 +735,7 @@
                             history.pushState(null, "", "#");
                         } else {
                             b.location.hash = "#";
-                            b.location.href = 'https://pay.kiwify.com.br/sgY9vG0/?src=' + src + "&utm_source=back_redirect"; //LINK PARA REDIRECIONAR AQUI
+                            b.location.href = 'https://go.perfectpay.com.br/PPU38CLMI0B' + src + "&utm_source=back_redirect"; //LINK PARA REDIRECIONAR AQUI
                         }
                     }
                     a.checkCompat();
@@ -766,6 +766,19 @@
 
         gtag('config', 'UA-218096320-6');
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  (function ($) {
+    $('a').each(function () {
+      let href = $(this).attr("href");
+      if (href === undefined || href.indexOf("#") >= 0 || href.indexOf("api.whatsapp") >= 0) return true;
+      // if (href.indexOf("perfectpay") == -1) return true; 
+      let search_params = document.location.search.replace('?', '');
+      let urlFinal = href + (href.indexOf("?") > 0 ? '&' : '?') + search_params.toString();
+      $(this).attr("href", urlFinal);
+    });
+  })(jQuery);
+</script>
 
 
 </body></html>
